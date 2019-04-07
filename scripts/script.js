@@ -1,17 +1,31 @@
-var app = angular.module("simpleApp", []);
+var app = angular
+  .module("myModule", [])
+  .controller("myController", function($scope) {
+    var technologies = [
+      {
+        name: "JAVA",
+        likes: 0,
+        dislikes: 0
+      },
+      {
+        name: "C#",
+        likes: 0,
+        dislikes: 0
+      },
+      {
+        name: ".NET",
+        likes: 0,
+        dislikes: 0
+      }
+    ];
 
-app.controller("simpleController", function($scope) {
-  $scope.lugar;
-  $scope.listaLugar = ["Primeiro", "Segundo", "Terceiro", "Quarto", "Quinto"];
+    $scope.technologies = technologies;
 
-  var pessoa = {
-    nome: ""
-  };
+    $scope.incrementLikes = function(technology) {
+      technology.likes++;
+    };
 
-  $scope.pessoa = pessoa;
-  $scope.listaPessoa = [{ nome: "Felipe" }, { nome: "Igor" }, { nome: "Luis" }];
- 
- //Debugger serve para ajudar a debugar
- //Faz A Execução pausadamente
-  debugger;
-});
+    $scope.incrementDislikes = function(technology) {
+      technology.dislikes++;
+    };
+  });

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="simpleApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="scripts/angular.min.js" type="text/javascript"></script>
+    <script src="scripts/script3.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>NG-Repeat Example</p>
+    <div ng-controller="simpleController">
+      <ul>
+        <!--Ng-repeat é similar ao forIt no JAVA-->
+        <li ng-repeat="lugar in listaLugar">{{ lugar }}</li>
+      </ul>
+    </div>
+    <hr />
+
+    <p>NG Disable Example</p>
+    <!-- NgShow, o model deve ser o mesmo que o ng-show no componente a ser escondido -->
+    <input type="checkbox" ng-model="disabledTeste" />
+
+    <input type="text" name="teste" id="" ng-disabled="disabledTeste" />
+
+    <hr />
+
+    <p>NG Show Example</p>
+    <!-- NgShow, o model deve ser o mesmo que o ng-show no componente a ser escondido -->
+    <input type="checkbox" ng-model="showTeste" />
+    <div ng-controller="simpleController">
+      <ul ng-show="showTeste">
+        <li ng-repeat="pessoa in listaPessoa">{{ pessoa.nome }}</li>
+      </ul>
+    </div>
+    <hr />
+    <p>NG Hide Example</p>
+    <!-- NgShow, o model deve ser o mesmo que o ng-show no componente a ser escondido -->
+    <input type="checkbox" ng-model="hideTeste" />
+    <div ng-controller="simpleController">
+      <ul ng-hide="hideTeste">
+        <li ng-repeat="pessoa in listaPessoa">{{ pessoa.nome }}</li>
+      </ul>
+    </div>
+    <hr />
+    <p>NG Click Example</p>
+    <!-- NgShow, o model deve ser o mesmo que o ng-show no componente a ser escondido -->
+    <button ng-click="variavelTeste = 'Batata'">Definir o Valor</button>
+    <button ng-click="variavelTeste = 'Batata2'">Definir o Valor2</button>
+
+    <span>{{ variavelTeste }}</span>
+  </body>
+</html>
