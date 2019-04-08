@@ -10,12 +10,8 @@ app.controller("simpleController", function($scope) {
 
   $scope.pessoa = pessoa;
   $scope.listaPessoa = [{ nome: "Felipe" }, { nome: "Igor" }, { nome: "Luis" }];
- 
- //Debugger serve para ajudar a debugar
- //Faz A Execução pausadamente
+
+  //Debugger serve para ajudar a debugar
+  //Faz A Execução pausadamente
   debugger;
-
-
-
-  
 });
